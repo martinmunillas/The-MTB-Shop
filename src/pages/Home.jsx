@@ -1,24 +1,34 @@
-import React from 'react'
+import React from "react";
+import { connect } from "react-redux";
 
-import Header from '../components/Header'
-import SaleAd from '../components/SaleAd'
+import Header from "../components/Header";
+import SaleAd from "../components/SaleAd";
+import CarouselItem from "../components/CarouselItem";
+import Carousel from "../components/Carousel";
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            saleItems: ["Shirt", "Helmet", "Gloves"]
-        }
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <>
-                <Header />
-                <SaleAd saleItems={this.state.saleItems} />
-            </>
-        )
-    }
+  render() {
+    return (
+      <>
+        <Header />
+        <Carousel header="Sales">
+            {this.props.items.map((item) => (
+              <CarouselItem key={item.id} {...item} />
+            ))}
+        </Carousel>
+      </>
+    );
+  }
 }
 
-export default Home
+const mapStateToProps = (state) => {
+  return {
+    items: state.items,
+  };
+};
+
+export default connect(mapStateToProps, null)(Home);

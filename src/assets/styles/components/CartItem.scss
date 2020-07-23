@@ -1,0 +1,27 @@
+@import '../utils/Imports.scss';
+
+.cartItem {
+    height: 100px;
+    width: 60%;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primaryColor_ligth;
+    border-radius: 20px;
+}
+
+.cartItem_image {
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+    padding: 5px;
+    border: 5px solid #5e5e5e;
+    border-radius: 5px;
+    background-color: #ffffff;
+    
+}
+
+.cartItem_name {}
+
+.cartItem_amount {}

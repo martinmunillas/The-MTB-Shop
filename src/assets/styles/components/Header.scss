@@ -16,6 +16,12 @@
     justify-content: center;
 }
 
+.logo a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo_image {
     max-width: 300px;
 }
@@ -42,8 +48,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: 450ms all;  
 }
+
+.cart:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
 
 .cart_image {
     max-width: 80px;
 }
+
+.cartCount {
+    height: 40px;
+    width: 40px;
+    background-color: $secondaryColor;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 600;
+  }
