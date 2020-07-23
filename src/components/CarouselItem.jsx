@@ -19,7 +19,10 @@ const CarouselItem = (props) => {
     exchange,
   } = props;
 
+  let amount = 0
+
   const handleAddToCart = () => {
+    amount++
     props.addToCart({
       id,
       name,
@@ -28,6 +31,7 @@ const CarouselItem = (props) => {
       imageSrc,
       price,
       discount,
+      amount
     });
   };
   return (

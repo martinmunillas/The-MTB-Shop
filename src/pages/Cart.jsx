@@ -8,11 +8,15 @@ const Cart = (props) => {
     return (
       <>
         <Header />
-        <div className="cartItems">
+        {props.cart.length === 0 ? (
+            <h2>You haven't add any product to your cart</h2>
+        ) : (  
+            <div className="cartItems">
             {props.cart.map(item => (
                 <CartItem key={item.id} {...item} />
             ))}
         </div>
+            )}
       </>
     );
 }

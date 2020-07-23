@@ -15,6 +15,7 @@ class Home extends React.Component {
     return (
       <>
         <Header />
+        <SaleAd saleItems={this.props.items} />
         <Carousel header="Sales">
             {this.props.items.map((item) => (
               <CarouselItem key={item.id} {...item} />

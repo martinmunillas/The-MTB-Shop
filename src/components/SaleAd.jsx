@@ -1,19 +1,21 @@
 import React from "react";
 
 import '../assets/styles/components/SaleAd.scss'
+import bike from "../assets/static/products/bike.svg";
 
-class SaleAd extends React.Component {
-  render() {
+const SaleAd = (props) => {
     return (
       <section className="saleAd">
         <div className="saleAd_content">
-          {this.props.saleItems.map((item) => (
-            <h2 key={Math.random()}>{item} + </h2>
+          {props.saleItems.map((item) => (
+            <div key={item.id}>
+            <img src={bike} alt="Item.name"/>
+            <h2> + </h2>
+            </div>
           ))}
         </div>
       </section>
     );
   }
-}
 
 export default SaleAd;

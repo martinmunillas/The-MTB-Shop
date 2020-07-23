@@ -12,14 +12,15 @@ const CartItem = (props) => {
         imageSrc,
         price,
         discount,
+        amount,
         exchange,
       } = props;
-    
+
     return (
         <div className="cartItem">
             <img src={bike} alt="" className="cartItem_image"/>
             <h2 className="cartItem_name">{name}</h2>
-            <p className="cartItem_amount">Amount 0</p>
+            <p className="cartItem_amount">Amount {amount}</p>
         </div>
     )
 }
