@@ -5,7 +5,7 @@ import { addToCart } from "../redux/actions";
 
 import "../assets/styles/components/CarouselItem.scss";
 import greyCart from "../assets/static/greyCart.svg";
-import bike from "../assets/static/products/bike.svg";
+const bike = require("../assets/static/products/bike.svg");
 
 const CarouselItem = (props) => {
   const {
@@ -18,7 +18,7 @@ const CarouselItem = (props) => {
     discount,
     exchange,
   } = props;
-
+  
   let amount = 0
 
   const handleAddToCart = () => {

@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const Header = (props) => {
   return (
     <header className="header">
+      <div className="headerCont">
       <section className="logo">
         <Link to="/">
           <img src={logo} alt="logo" className="logo_image" />
@@ -34,6 +35,7 @@ const Header = (props) => {
         <img src={whiteCart} alt="cart" className="cart_image" />
         <span className="cartCount">{props.cart.length}</span>
       </Link>
+      </div>
     </header>
   );
 };

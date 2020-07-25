@@ -1,29 +1,34 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
- 
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
-  entry: './src/index.js', /*referencia al archivo principal*/
-  output: {   /*resolve permite detectar el __dirname directorio en el que estamos y pasandole un directorio para guardar los archivos*/
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js', /* filename es el nombre del archivo final */
-  }, /*output donde se guardan los archivos resultantes cuando se haga la compilación*/
+  entry: "./src/index.js" /*referencia al archivo principal*/,
+  output: {
+    /*resolve permite detectar el __dirname directorio en el que estamos y pasandole un directorio para guardar los archivos*/
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js" /* filename es el nombre del archivo final */,
+    publicPath: '/',
+  } /*output donde se guardan los archivos resultantes cuando se haga la compilación*/,
   resolve: {
-    extensions: ['.js', '.jsx'],
-  }, /*resuelve las extensiones que usarán en el proyecto*/
+    extensions: [".js", ".jsx"],
+  } /*resuelve las extensiones que usarán en el proyecto*/,
   module: {
     rules: [
-      { /* Regla principal */
-        test: /\.(js|jsx)$/, /* Identificación de los archivos js y jsx */
-        exclude: /node_modules/, /* Excluye la carpeta node_modules */
+      {
+        /* Regla principal */
+        test: /\.(js|jsx)$/ /* Identificación de los archivos js y jsx */,
+        exclude: /node_modules/ /* Excluye la carpeta node_modules */,
         use: {
-          loader: "babel-loader"/* Hay que usar el loader para que babel haga el trabajo */
+          loader:
+            "babel-loader" /* Hay que usar el loader para que babel haga el trabajo */,
         },
-      }, 
-      { /* Nueva regla */
-        test: /\.html$/, /* Identificación de los archivos html */
+      },
+      {
+        /* Nueva regla */
+        test: /\.html$/ /* Identificación de los archivos html */,
         use: {
-          loader: "html-loader"/* Loader de html */
+          loader: "html-loader" /* Loader de html */,
         },
       },
       {
@@ -32,17 +37,17 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
           },
-          'css-loader',
-          'sass-loader',
-        ]
+          "css-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.(png|gif|jpg)$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: 'assets/[hash].[ext]',
+              name: "assets/[hash].[ext]",
             },
           },
         ],
@@ -51,23 +56,22 @@ module.exports = {
         test: /\.svg$/,
         use: [
           {
-            loader: 'svg-url-loader',
-            options: {
-              limit: 10000,
-            },
+            loader: "svg-url-loader",
           },
         ],
       },
     ],
-  },/* Dicta las reglas necesarias para el proyecto */
+  } /* Dicta las reglas necesarias para el proyecto */,
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html', /* Donde esta ubicado el template */
-      filename: './index.html'/* Nombre */
+      template: "./public/index.html" /* Donde esta ubicado el template */,
+      filename: "./index.html" /* Nombre */,
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/[name].css'
-    })
-  ], /* Añada los plugins que se necesitan */
+      filename: "assets/[name].css",
+    }),
+  ] /* Añada los plugins que se necesitan */,
 };
-

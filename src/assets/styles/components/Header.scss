@@ -1,12 +1,21 @@
 @import '../utils/Imports.scss';
 
 .header {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+}
+
+.headerCont {
     width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: $primaryColor;
     height: 150px;
     border-radius: 0 0 20px 20px;
+    position: fixed;
+    justify-self: center;
+    z-index: 1;
 }
 
 .logo {

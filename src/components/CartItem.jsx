@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from 'react-redux'
+import { connect } from "react-redux";
 
 import { addToCart, removeFromCart } from "../redux/actions";
 
@@ -18,29 +18,27 @@ const CartItem = (props) => {
     exchange,
   } = props;
 
-  let {
-    amount,
-  } = props
+  let { amount } = props;
 
   const handleRemove = () => {
-    props.removeFromCart({ id })
-  }
+    props.removeFromCart({ id });
+  };
 
   const handleLessAmount = () => {
     --amount;
-    if(amount < 1) {
-        props.removeFromCart({ id })
+    if (amount < 1) {
+      props.removeFromCart({ id });
     } else {
-        props.addToCart({
-          id,
-          name,
-          description,
-          types,
-          imageSrc,
-          price,
-          discount,
-          amount,
-        });
+      props.addToCart({
+        id,
+        name,
+        description,
+        types,
+        imageSrc,
+        price,
+        discount,
+        amount,
+      });
     }
   };
 
@@ -60,25 +58,38 @@ const CartItem = (props) => {
 
   return (
     <div className="cartItem">
-      <img src={bike} alt="" className="cartItem_image" />
-      <h2 className="cartItem_name">{name}</h2>
-      <p className="cartItem_amount">Amount {amount}</p>
-      <button className="moreAmount" onClick={handleMoreAmount}>
-        more
-      </button>
-      <button className="lessAmount" onClick={handleLessAmount}>
-        less
-      </button>
-      <button className="remove" onClick={handleRemove}>remove</button>
+      <div className="cartItem_image">
+        <img src={bike} alt={name} />
+      </div>
+      <h2 className="cartItem_name">{name}, Orange, L</h2> {/* Orange and L represents the product options that have to be replaced later */}
+      <div className="cartItem_amount">
+        Amount {amount}
+        <div className="cartItem_amount-buttons">
+          <span className="moreAmount" onClick={handleMoreAmount}></span>
+          <span className="lessAmount" onClick={handleLessAmount}></span>
+        </div>
+      </div>
+      <div className="cartItem_price">
+        <h2>
+          Subtotal: ${(Math.floor((price * (100 - discount)) * amount) / 100).toFixed(2)} {exchange}
+        </h2>
+      </div>
+      <span className="remove" onClick={handleRemove}>
+      &#10060;
+      </span>
     </div>
   );
 };
 
-
-
 const mapDispatchToProps = {
-    addToCart,
-    removeFromCart,
-  }  
+  addToCart,
+  removeFromCart,
+};
 
-export default connect(null, mapDispatchToProps)(CartItem);
+const mapStateToProps = (state) => {
+  return {
+    exchange: state.exchange,
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartItem);

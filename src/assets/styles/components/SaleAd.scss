@@ -1,11 +1,61 @@
-@import '../utils/Imports.scss';
+@import "../utils/Imports.scss";
 
 .saleAd {
-    width: 100%;
-    background-color: $secondaryColor;
+  width: 100%;
+  background-color: $secondaryColor;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -20px;
+  padding-top: 20px;
 }
 
 .saleAd_content {
     display: flex;
-    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0;
+    width: inherit;
+}
+
+.saleAd_content-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  width: inherit;
+}
+
+.saleItems_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comboImage {
+  width: 80%;
+}
+
+.moreAd {
+  font-size: 50px;
+}
+
+.comboPrices {
+  color: #ffffff;
+  margin: 20px;
+}
+
+.comboPrice {
+  font-size: 50px;
+}
+
+.oldComboPrice {
+  font-size: 20px;
+  text-decoration: line-through;
+  -ms-transform: rotate(-5deg); /* IE 9 */
+  transform: rotate(-5deg);
 }

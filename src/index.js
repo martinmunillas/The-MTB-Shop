@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import { Provider } from 'react-redux'
 import { createStore, compose } from 'redux'
-
 import reducer from './redux/reducers'
+
 import App from './routes/App'
 import initialState from './initialState'
 
