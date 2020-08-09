@@ -1,0 +1,48 @@
+@import '../../utils/Vars.scss';
+
+.form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.adminCreateProduct_form input  {
+  height: 10px;
+  width: 100%;
+  outline: none;
+  border-radius: 50px;
+  border: 2px solid $primaryColor;
+  padding: 10px;
+  margin: 5px 0 20px 0;
+}
+
+.adminCreateProduct_form textarea  {
+  height: 70px;
+  width: 100%;
+  outline: none;
+  border-radius: 10px 10px 0 10px;
+  border: 2px solid $primaryColor;
+  padding: 10px;
+  margin: 5px 0 20px 0;
+  overflow: hidden;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.adminCreateProduct_form input::-webkit-outer-spin-button,
+.adminCreateProduct_form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.adminCreateProduct_form input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.adminCreateProduct_form input[type="file"] {
+  height: 30px;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid $darkColor;
+  padding: 10px;
+}

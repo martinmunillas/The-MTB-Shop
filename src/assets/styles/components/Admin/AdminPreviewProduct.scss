@@ -1,0 +1,14 @@
+.adminProduct {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 400px;
+    height: 600px;
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 450ms all;
+    -webkit-transform-origin: center left;
+            transform-origin: center left;
+}

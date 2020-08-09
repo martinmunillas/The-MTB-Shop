@@ -1,0 +1,18 @@
+@import '../../utils/Vars.scss';
+
+.adminProductItem {
+    width: calc(100% - 80px);
+    height: 70px;
+    border-radius: 10px;
+    background-color: $tertiaryColor;
+    margin: 20px;
+    padding: 20px;
+}
+
+.adminProductItem a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+
+}

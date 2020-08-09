@@ -1,0 +1,47 @@
+@import "../../utils/Vars.scss";
+
+.adminMenuCont {
+  width: 15%;
+}
+
+.adminMenu {
+  width: 15%;
+  height: calc(100vh - #{$headerHeigth});
+  background-color: $secondaryColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-box-shadow: 6px 0px 25px -15px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 0px 25px -15px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 0px 25px -15px rgba(0, 0, 0, 0.75);
+  border-radius: 0 20px 20px 0;
+  position: fixed;
+  top: $headerHeigth;
+}
+
+.adminMenu a{
+  width: 100%;
+}
+
+.adminMenu_menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.adminMenu_item {
+  color: white;
+  list-style: none;
+  font-weight: 400;
+  margin: 30px 0;
+  cursor: pointer;
+  width: calc(100% - 60px);
+  padding: 10px 30px;
+}
+
+#home, .adminMenu_item:hover {
+  -webkit-box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.40);
+  -moz-box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.40);
+  box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.40);
+  font-weight: 600;
+}

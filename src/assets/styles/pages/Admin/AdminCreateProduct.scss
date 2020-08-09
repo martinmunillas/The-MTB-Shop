@@ -1,0 +1,31 @@
+@import "../../utils/Vars.scss";
+
+.adminCreateProduct {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} 
+
+.adminCreateProductCont {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.adminCreateProduct_preview {
+  display: flex;
+  justify-content: flex-end;
+  width: calc(50% - 20px);
+  margin-right: 20px;
+}
+
+.adminCreateProduct_form {
+  display: flex;
+  justify-content: flex-start;
+  width: calc(50% - 20px);
+  margin-left: 20px;
+}
+
+

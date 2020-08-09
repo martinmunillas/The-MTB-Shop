@@ -1,0 +1,27 @@
+@import '../../utils/Vars.scss';
+
+.footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+}
+
+.footerCont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: $secondaryColor;
+    border-radius: 20px 20px 0 0;
+    justify-self: center;
+    z-index: 1;
+}
+
+.design {
+    font-size: 20px;
+    color: white;
+    margin-right: 30px;
+    align-self: flex-end;
+    margin-bottom: 30px;
+}
