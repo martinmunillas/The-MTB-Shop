@@ -9,19 +9,26 @@ const AdminMenu = () => {
       <div className="adminMenu">
         <nav className="adminMenu_menu">
           <Link to="/">
-            <li className="adminMenu_item" id="home">
+            <ul className="adminMenu_item" id="home">
               Home
-            </li>
+            </ul>
           </Link>
-          <Link to="/admin/products">
-            <li className="adminMenu_item">Products</li>
-          </Link>
-          <Link to="/admin/create-product">
-            <li className="adminMenu_item">Ads</li>
+            <ul className="adminMenu_item" id="products">
+              Products
+              <Link to="/admin/products">
+                <li className="adminMenu_subItem" id="adminMenuSelected">All Products</li>
+              </Link>
+              <Link to="/admin/create-product">
+                <li className="adminMenu_subItem">Create New Product</li>
+              </Link>
+            </ul>
+          <Link to="/admin/">
+            <ul className="adminMenu_item">Ads</ul>
           </Link>
           <Link to="/admin/">
-            <li className="adminMenu_item">Customize</li>
+            <ul className="adminMenu_item">Customize</ul>
           </Link>
+          <ul className="adminMenu_item">Settings</ul>
         </nav>
       </div>
     </div>

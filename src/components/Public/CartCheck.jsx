@@ -22,7 +22,6 @@ const CartCheck = (props) => {
               <h2>{item.name}</h2>
               <p>
                 {getDiscountedPriceForAmount(item.price, item.discount, item.amount).toFixed(2)}
-                {console.log(item.price, item.discount, item.amount)}
               </p>
               {getTotalPrice(getDiscountedPriceForAmount(item.price, item.discount, item.amount))}
             </div>

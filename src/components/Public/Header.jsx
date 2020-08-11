@@ -7,6 +7,8 @@ import "../../assets/styles/components/Public/Header.scss";
 import logo from "../../assets/static/logo.svg";
 import whiteCart from "../../assets/static/whiteCart.svg";
 
+import Menu from './Menu'
+
 const Header = (props) => {
   return (
     <header className="header">
@@ -17,20 +19,7 @@ const Header = (props) => {
         </Link>
       </section>
       <section className="menuCont">
-        <nav className="menu">
-          <h2 className="menu_item">
-            <Link to="/">Home</Link>
-          </h2>
-          <h2 className="menu_item">
-            <a href="">Bike</a>
-          </h2>
-          <h2 className="menu_item">
-            <a href="">Gear</a>
-          </h2>
-          <h2 className="menu_item">
-            <a href="">Contact</a>
-          </h2>
-        </nav>
+        <Menu />
       </section>
       <Link to="/cart" className="cart">
         <img src={whiteCart} alt="cart" className="cart_image" />

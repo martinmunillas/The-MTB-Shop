@@ -1,3 +1,13 @@
+const sortAlphabethicly = (a, b) => {
+  if (a.name > b.name) {
+    return 1;
+  }
+  if (a.name < b.name) {
+    return -1;
+  }
+  return 0;
+};
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
@@ -8,8 +18,10 @@ const reducer = (state, action) => {
           ? [
               ...state.cart.filter((item) => item.id !== action.payload.id),
               action.payload,
-            ]
-          : [...state.cart, action.payload],
+            ].sort((a, b) => sortAlphabethicly(a, b))
+          : [...state.cart, action.payload].sort((a, b) =>
+              sortAlphabethicly(a, b)
+            ),
       };
 
     case "REMOVE_FROM_CART":
@@ -21,7 +33,7 @@ const reducer = (state, action) => {
     case "PUBLISH_PRODUCT":
       return {
         ...state,
-        items: [...state.items, action.payload],
+        items: [...state.items, action.payload].sort((a, b) =>sortAlphabethicly(a, b)),
       };
 
     case "EDIT_PRODUCT":
@@ -30,7 +42,7 @@ const reducer = (state, action) => {
         items: [
           ...state.items.filter((item) => item.id !== action.payload.id),
           action.payload,
-        ]
+        ].sort((a, b) => sortAlphabethicly(a, b)),
       };
     default:
       return state;

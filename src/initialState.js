@@ -1,4 +1,5 @@
 const initialState = {
+  currentPage: 'home',
   cart: [],
   exchange: "USD",
   comboA: {

@@ -1,0 +1,16 @@
+.menu {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu_item a{
+    color: #ffffff;
+}
+
+.menu_item-active {
+    position: relative;
+    top: -2px;
+    scale: 1.5;
+}

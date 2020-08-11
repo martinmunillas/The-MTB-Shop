@@ -24,7 +24,7 @@ const App = () => {
           <PublicRoute exact path="/cart" component={Cart} />
           <PublicRoute exact path="/product/:productId" component={ProductPage} />
           <AdminRoute exact path="/admin" component={AdminHome} />
-          <AdminRoute exact path="/admin/create-products" component={AdminCreateProduct} />
+          <AdminRoute exact path="/admin/create-product" component={AdminCreateProduct} />
           <AdminRoute exact path="/admin/product/:productId" component={AdminEditProduct} />
           <AdminRoute exact path="/admin/products" component={AdminProductsList} />
           <PublicRoute component={NotFound} />

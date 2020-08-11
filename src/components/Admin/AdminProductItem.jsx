@@ -8,7 +8,7 @@ const AdminProductItem = (props) => {
   const { id, name, price, description, exchange } = props;
   return (
     <div className="adminProductItem">
-      <Link to={`/product/${id}`}>
+      <Link to={`/admin/product/${id}`}>
         <h2 className="adminProductItem_title">{name}</h2>
         <p className="adminProductItem_description">
           {description.length > 20
