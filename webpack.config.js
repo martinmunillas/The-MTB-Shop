@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 require('dotenv').config();
 
-const isDev = process.env.ENV === 'developmnet';
+const isDev = process.env.ENV === 'development';
 
 module.exports = {
   entry: './src/frontend/index.js',

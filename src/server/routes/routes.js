@@ -7,28 +7,30 @@ import AdminCreateProduct from '../../frontend/pages/Admin/AdminCreateProduct';
 import AdminProductsList from '../../frontend/pages/Admin/AdminProductsList';
 import AdminEditProduct from '../../frontend/pages/Admin/AdminEditProduct';
 
-export default routes = [
+const routes = [
   { exact: true, path: '/', component: Home },
   { exact: true, path: '/cart', component: Cart },
   { exact: true, path: '/product/:productId', component: ProductPage },
-  { exact: true, path: '/admin', component: AdminHome, isAdmin: true },
+  { exact: true, path: '/admin', component: AdminHome, adminRoute: true },
   {
     exact: true,
     path: '/admin/create-product',
     component: AdminCreateProduct,
-    isAdmin: true,
+    adminRoute: true,
   },
   {
     exact: true,
     path: '/admin/product/:productId',
     component: AdminEditProduct,
-    isAdmin: true,
+    adminRoute: true,
   },
   {
     exact: true,
     path: '/admin/products',
     component: AdminProductsList,
-    isAdmin: true,
+    adminRoute: true,
   },
   { component: NotFound },
 ];
+
+export default routes;

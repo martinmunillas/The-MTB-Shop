@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 
 import '../assets/styles/utils/Reset.scss';
 import PublicRoute from '../components/Public/PublicRoute';
@@ -10,13 +10,13 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
-        {routes.map((route, i) => {
-          isAdmin ? (
+        {routes.map((route, i) =>
+          route.adminRoute ? (
             <AdminRoute {...route} key={i} />
           ) : (
             <PublicRoute {...route} key={i} />
-          );
-        })}
+          )
+        )}
       </Switch>
     </BrowserRouter>
   );
