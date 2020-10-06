@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server",
     "start:dev": "nodemon src/server",
-    "build": "webpack --mode production"
+    "build": "webpack-cli --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,8 +18,11 @@
     "@babel/preset-react": "^7.10.4",
     "@babel/register": "^7.11.5",
     "axios": "^0.20.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^6.0.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^4.1.1",
     "history": "^5.0.0",
     "ignore-styles": "^5.0.1",
     "react": "^16.13.1",
@@ -29,7 +32,8 @@
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "webpack": "^4.43.0",
-    "webpack-hot-middleware": "^2.25.0"
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-manifest-plugin": "^2.2.0"
   },
   "devDependencies": {
     "babel-loader": "^8.1.0",
@@ -39,6 +43,7 @@
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.2",
     "svg-url-loader": "^6.0.0",
+    "terser-webpack-plugin": "^4.2.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.11.0"

@@ -76,5 +76,4 @@ yarn-error.log
 dist/
 
 
-src/server/public/build
-src/server/public/build/
+src/server/public/

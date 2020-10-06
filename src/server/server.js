@@ -6,13 +6,15 @@ import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { StaticRouter, Switch } from 'react-router-dom';
 import { createStore } from 'redux';
+import helmet from 'helmet';
 
 import routes from './routes/routes.js';
+import initialState from './utils/mock/initialState.js';
+import getManifest from './utils/middlewares/getManifest';
 
 import AdminRoute from '../frontend/components/Admin/AdminRoute.jsx';
 import PublicRoute from '../frontend/components/Public/PublicRoute.jsx';
 import reducer from '../frontend/redux/reducers.js';
-import initialState from './utils/mock/initialState.js';
 
 dotenv.config();
 const app = express();
@@ -32,14 +34,25 @@ if (ENV === 'development') {
   app.use(webpackDevMiddleware(compiler, serverConfig));
   app.use(webpackHotMiddleware(compiler));
 } else {
+  app.use(getManifest);
+  app.use(express.static(__dirname + '/public'));
+  app.use(helmet({ contentSecurityPolicy: false }));
+  app.disable('x-powered-by');
 }
 
-const setResponse = (html, preloadedState) => {
+const setResponse = (html, preloadedState, manifest) => {
+  const mainStyles = manifest
+    ? '/build/' + manifest['main.css']
+    : '/assets/app.css';
+  const mainBuild = manifest
+    ? '/build/' + manifest['main.js']
+    : '/assets/app.js';
+
   return `
         <!DOCTYPE html>
         <html lang="en">
             <head>
-                <link rel="stylesheet" type="text/css" href="/assets/app.css" >
+                <link rel="stylesheet" type="text/css" href="${mainStyles}" >
                 <link rel="stylesheet" href="https://use.typekit.net/zse2lqq.css">
 
                 <meta charset="UTF-8">
@@ -54,7 +67,7 @@ const setResponse = (html, preloadedState) => {
                     ).replace(/</g, '\\u003c')}
                 </script>
 
-                <script src="/assets/app.js"></script>
+                <script src="${mainBuild}"></script>
             </body>
         </html>
               `;
@@ -79,7 +92,7 @@ const renderApp = (req, res) => {
     </Provider>
   );
 
-  res.send(setResponse(html, preloadedState));
+  res.send(setResponse(html, preloadedState, req.hashManifest));
 };
 
 app.get('*', renderApp);
