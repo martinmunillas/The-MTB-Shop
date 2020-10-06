@@ -6,8 +6,6 @@ import { addToCart } from "../../redux/actions";
 
 import "../../assets/styles/components/Public/CarouselItem.scss";
 
-import greyCart from "../../assets/static/greyCart.svg";
-const bike = require("../../assets/static/products/bike.svg");
 
 const CarouselItem = (props) => {
   const {
@@ -46,12 +44,12 @@ const CarouselItem = (props) => {
             </div>
           )}
           <img
-            src={greyCart}
+            src=''
             alt="cart"
             className="product_top-cart"
             onClick={handleAddToCart}
           />
-          <img src={bike} alt={name} className="product_top-image" />
+          <img src='' alt={name} className="product_top-image" />
         </div>
         <div className="product_bottom">
           <h2 className="product_bottom-name">{name}</h2>

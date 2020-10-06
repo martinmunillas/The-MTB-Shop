@@ -5,8 +5,6 @@ import "../../assets/styles/pages/Public/ProductPage.scss";
 
 import { addToCart } from '../../redux/actions'
 
-import bikeImg from "../../assets/static/products/bike.svg";
-import whiteCart from "../../assets/static/whiteCart.svg";
 
 const ProductContainer = (props) => {
   const { productId } = props.match.params;
@@ -52,7 +50,7 @@ const ProductContainer = (props) => {
       <section className="mainProduct">
         <div className="mainProduct_image">
           <div className="mainProduct_imageCont">
-            <img src={bikeImg} />
+            <img src='' />
           </div>
         </div>
         <div className="mainProduct_details">
@@ -82,7 +80,7 @@ const ProductContainer = (props) => {
               <input type="number" min="1" max="9" />
             </div>
             <button className="ProductPage_addToCart">
-              <img src={whiteCart} alt="addToCart" className="cart" />
+              <img src='' alt="addToCart" className="cart" />
               <h2>Add to Cart</h2>
             </button>
           </form>

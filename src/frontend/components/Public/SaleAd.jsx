@@ -1,7 +1,6 @@
 import React from "react";
 
 import "../../assets/styles/components/Public/SaleAd.scss";
-import bike from "../../assets/static/products/bike.svg";
 
 const SaleAd = (props) => {
   const { saleItems, price, exchange } = props;
@@ -19,7 +18,7 @@ const SaleAd = (props) => {
         {saleItems.map((item) => (
           <>
             <div className="saleItems_item">
-              <img src={bike} alt={item.name} className="comboImage" />
+              <img src='' alt={item.name} className="comboImage" />
               <h2>{item.name}</h2>
             </div>
             {item.id < saleItems.length && <h2 className="moreAd"> + </h2>}

@@ -5,7 +5,6 @@ import { addToCart, removeFromCart } from "../../redux/actions";
 
 import "../../assets/styles/components/Public/CartItem.scss";
 
-import bike from "../../assets/static/products/bike.svg";
 
 const CartItem = (props) => {
   const {
@@ -60,7 +59,7 @@ const CartItem = (props) => {
   return (
     <div className="cartItem">
       <div className="cartItem_image">
-        <img src={bike} alt={name} />
+        <img src='' alt={name} />
       </div>
       <h2 className="cartItem_name">{name}, Orange, L</h2>{" "}
       {/* Orange and L represents the product options that have to be replaced later */}

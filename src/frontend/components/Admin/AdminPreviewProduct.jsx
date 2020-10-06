@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import "../../assets/styles/components/Public/CarouselItem.scss";
 import "../../assets/styles/components/Admin/AdminPreviewProduct.scss";
 
-import greyCart from "../../assets/static/greyCart.svg";
-const bike = require("../../assets/static/products/bike.svg");
 
 const AdminPreviewProduct = (props) => {
   const {
@@ -25,11 +23,11 @@ const AdminPreviewProduct = (props) => {
             </div>
           )}
           <img
-            src={greyCart}
+            src=''
             alt="cart"
             className="product_top-cart"
           />
-          <img src={bike} alt={name} className="product_top-image" />
+          <img src='' alt={name} className="product_top-image" />
         </div>
         <div className="product_bottom">
           <h2 className="product_bottom-name">{name}</h2>
