@@ -10,7 +10,7 @@ const Home = (props) => {
 
     return (
       <>
-        <SaleAd saleItems={props.comboA.items} price={props.comboA.price} exchange={props.exchange} />
+        <SaleAd comboItems={props.comboA.items} price={props.comboA.price} exchange={props.exchange} />
         <Carousel header="Sales">
             {saleItems.map((item) => (
               <CarouselItem key={item.id} {...item} />

@@ -50,14 +50,14 @@ const ProductContainer = (props) => {
       <section className="mainProduct">
         <div className="mainProduct_image">
           <div className="mainProduct_imageCont">
-            <img src='' />
+            <img src={imageSrc} />
           </div>
         </div>
         <div className="mainProduct_details">
-          <h2 className="mainProduct_details-title">{productData.name}</h2>
+          <h2 className="mainProduct_details-title">{name}</h2>
 
           <p className="mainProduct_details-price">
-            ${productData.price} {props.exchange}
+            ${price} {props.exchange}
           </p>
 
           <form
@@ -80,7 +80,7 @@ const ProductContainer = (props) => {
               <input type="number" min="1" max="9" />
             </div>
             <button className="ProductPage_addToCart">
-              <img src='' alt="addToCart" className="cart" />
+              <img src='/static/whiteCart.svg' alt="addToCart" className="cart" />
               <h2>Add to Cart</h2>
             </button>
           </form>
@@ -88,7 +88,7 @@ const ProductContainer = (props) => {
       </section>
       <section className="descriptionProduct">
         <h2>Product Description:</h2>
-        <p className="descriptionProduct_text">{productData.description}</p>
+        <p className="descriptionProduct_text">{description}</p>
       </section>
     </main>
   );

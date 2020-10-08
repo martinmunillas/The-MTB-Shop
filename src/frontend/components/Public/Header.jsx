@@ -13,14 +13,14 @@ const Header = (props) => {
       <div className="headerCont">
       <section className="logo">
         <Link to="/">
-          <img src='' alt="logo" className="logo_image" />
+          <img src='/static/logo.svg' alt="logo" className="logo_image" />
         </Link>
       </section>
       <section className="menuCont">
         <Menu />
       </section>
       <Link to="/cart" className="cart">
-        <img src='' alt="cart" className="cart_image" />
+        <img src='/static/whiteCart.svg' alt="cart" className="cart_image" />
         <span className="cartCount">{props.cart.length}</span>
       </Link>
       </div>

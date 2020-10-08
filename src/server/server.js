@@ -20,6 +20,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(express.static(__dirname + '/public'));
 
 const { PORT, URL, ENV } = process.env;
 
@@ -35,7 +36,6 @@ if (ENV === 'development') {
   app.use(webpackHotMiddleware(compiler));
 } else {
   app.use(getManifest);
-  app.use(express.static(__dirname + '/public'));
   app.use(helmet({ contentSecurityPolicy: false }));
   app.disable('x-powered-by');
 }

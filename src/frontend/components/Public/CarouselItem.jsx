@@ -44,12 +44,12 @@ const CarouselItem = (props) => {
             </div>
           )}
           <img
-            src=''
+            src='/static/greyCart.svg'
             alt="cart"
             className="product_top-cart"
             onClick={handleAddToCart}
           />
-          <img src='' alt={name} className="product_top-image" />
+          <img src={imageSrc} alt={name} className="product_top-image" />
         </div>
         <div className="product_bottom">
           <h2 className="product_bottom-name">{name}</h2>
